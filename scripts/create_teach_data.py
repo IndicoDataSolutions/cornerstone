@@ -12,9 +12,6 @@ import pandas as pd
 import os
 import indicoio
 
-# set api_key to use indico pdf extractor
-indicoio.config.api_key = os.environ.get('CORNERSTONE_API_KEY')
-
 
 def convert_to_plaintext(data_path,
                          output_path,
@@ -51,6 +48,9 @@ def split_test_train_set(output_path, **kwargs):
 
 
 if __name__ == '__main__':
+    # set api_key to use indico pdf extractor
+    indicoio.config.api_key = os.environ.get('CORNERSTONE_API_KEY')
+
     data_path = "/data/"
     output_path = os.path.join(data_path, 'cornerstone_data_set.csv')
 
